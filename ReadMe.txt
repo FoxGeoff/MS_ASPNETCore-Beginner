@@ -66,3 +66,6 @@ public async Task<IActionResult> OnPostAsync()
 
 Create DONE!
 **********************************************
+Start List Customers on Index Page
+**********************************************
+
