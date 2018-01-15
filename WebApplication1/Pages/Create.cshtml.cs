@@ -21,7 +21,7 @@ namespace WebApplication1.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid){return Page();}
+            if (!ModelState.IsValid) { return Page(); }
 
             _context.Customers.Add(Customer);
             await _context.SaveChangesAsync();

@@ -25,5 +25,17 @@ namespace WebApplication1.Pages
             Customers = await _context.Customers
                 .AsNoTracking().ToListAsync();
         }
+
+        public async Task<IActionResult> OnPostDeleteAsync(int id)
+        {
+            var customer = await _context.Customers.FindAsync(id);
+
+            if (customer != null)
+            {
+                _context.Remove(customer);
+                await _context.SaveChangesAsync();
+            }
+            return RedirectToPage();
+        }
     }
 }
