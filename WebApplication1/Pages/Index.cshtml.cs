@@ -17,6 +17,9 @@ namespace WebApplication1.Pages
             _context = context;
         }
 
+        [TempData]
+        public string Message { get; set; }
+
         [BindProperty]
         public IList<Customer> Customers { get; private set; }
 

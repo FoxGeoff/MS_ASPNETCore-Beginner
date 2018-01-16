@@ -16,6 +16,9 @@ namespace WebApplication1.Pages
             _context = context;
         }
 
+        [TempData]
+        public string Message { get; set; }
+
         [BindProperty]
         public Customer Customer { get; set; }
 
@@ -25,6 +28,7 @@ namespace WebApplication1.Pages
 
             _context.Customers.Add(Customer);
             await _context.SaveChangesAsync();
+            Message = $"Customer {Customer.Name} added!";
             return RedirectToPage("/Index");
         }
     }
